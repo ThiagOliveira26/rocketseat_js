@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head lang="pt-Br">
+        <meta charset="UFT-8">
+        <title>Thiago Oliveira</title>
+    </head>
+
+    <body>
+        <div class="app">
+            <button onclick="CreateQuadrado()">Criar Quadrado</button>
+            <div id="box">
+            </div>
+            
+        </div>
+        <script>
+
+            function CreateQuadrado(){
+                
+                var novoElemento = document.createElement('div');
+                novoElemento.setAttribute('style','width:50px; height:50px; background:black');
+                //<div style="width:50px; height:50px; background:black"></div>  
+                novoElemento.setAttribute('onmouseover','mudarCor(this)');  //this para passar o proprio elemento.
+                var IdBox = document.getElementById("box");
+                IdBox.appendChild(novoElemento);    
+            }
+
+            function mudarCor(elemento){
+                var newColor = getRandomColor(); // #E943F0 - exemplo de cor
+                console.log(elemento);
+                //modificando atrituto style do elemento passado por referencia;
+                elemento.setAttribute('style','width:50px; height:50px; background:'+newColor);    
+                console.log(elemento);          
+            }
+            //funcao para gerar cor random
+            function getRandomColor() {
+                var letters = "0123456789ABCDEF";
+                var color = "#";
+                for (var i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                    }
+                return color;
+                }
+            
+        </script>
+    </body>
+</html>

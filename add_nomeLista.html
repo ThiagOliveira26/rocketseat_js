@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head lang="pt-Br">
+        <meta = charset="UTF-8">
+        <title>Thiago Oliveira</title>
+    </head>
+
+    <body>
+        <div id="nav">
+            <input type="text" name="nome">
+            <button onClick="adicionar()">Adicionar</button>
+        </div>
+
+
+        <script>
+
+            var nomes = ["Diego", "Gabriel", "Lucas"];
+            var aux;
+            var lista = document.createElement('ul');
+
+            //for..of >a cada iteraçao, aux recebe o elemento. no caso, as strings diego, gabriel e lucas.
+            //cada iteraçao é criado novo elemento li > recebe valor do aux, que é a string > adiciona na lista.
+            for (const aux of nomes) {
+                var item = document.createElement('li');
+                item.innerText = aux;
+                lista.appendChild(item);
+            }
+
+            function adicionar(){
+                var nomeInput = document.querySelector('div input').value;
+                if (nomeInput != ""){  
+                    var item = document.createElement('li');
+                    item.innerText = nomeInput;
+                    lista.appendChild(item);
+                    //modo de adquirir informacao do html.
+                    document.querySelector('div input').value = "";
+                }
+            }
+            
+            var root = document.getElementById('nav');
+            root.appendChild(lista);
+
+        </script>
+    </body>
+</html>
