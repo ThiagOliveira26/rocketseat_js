@@ -10,7 +10,7 @@ var toDos = JSON.parse(localStorage.getItem('list_todos')) || [];
     'Estudar JavaScript',
     'Acessar Rocketseat'
 ];
--- COMENTARIO PARA INICIAR O ARRAY DE toDo COM JSON
+-- COMENTADO PARA INICIAR O ARRAY DE toDo COM JSON ^
 */ 
 
 function rendertoDos(){
